@@ -1,0 +1,142 @@
+{
+  "users": {
+    "28646356-eafa-4333-a284-c9b03a1096ba": {
+      "id": "28646356-eafa-4333-a284-c9b03a1096ba",
+      "name": "Sayali",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-06T17:50:58.375Z"
+    },
+    "8452cc3d-73cb-4c54-9565-17f07646810f": {
+      "id": "8452cc3d-73cb-4c54-9565-17f07646810f",
+      "name": "Rahul",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-06T17:53:15.601Z"
+    },
+    "26c18fed-d130-4bdb-b7b8-fbdc3394e357": {
+      "id": "26c18fed-d130-4bdb-b7b8-fbdc3394e357",
+      "name": "Priya",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-06T17:53:15.601Z"
+    },
+    "3957dcf6-53b4-4895-a27e-d042726c7519": {
+      "id": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "name": "czxc",
+      "mobile": "",
+      "acceptsCash": true,
+      "qrImage": "/uploads/qr-1791457845415-Lri7Tl.png",
+      "createdAt": "2026-10-08T11:08:40.558Z"
+    }
+  },
+  "groups": {
+    "a9b93a9a-8346-4add-948f-0f9bde2f740e": {
+      "id": "a9b93a9a-8346-4add-948f-0f9bde2f740e",
+      "name": "Goa Trip",
+      "description": "Weekend getaway",
+      "inviteCode": "FIN-3IMWQP",
+      "createdBy": "28646356-eafa-4333-a284-c9b03a1096ba",
+      "members": [
+        {
+          "id": "11d9531e-1820-4eb8-990b-19256b3f1b99",
+          "userId": "28646356-eafa-4333-a284-c9b03a1096ba",
+          "name": "Sayali",
+          "joinedAt": "2026-10-06T17:53:15.601Z"
+        },
+        {
+          "id": "84f02d10-9c5c-4803-b75c-eb4f6a4ac78b",
+          "userId": "8452cc3d-73cb-4c54-9565-17f07646810f",
+          "name": "Rahul",
+          "joinedAt": "2026-10-06T17:53:15.601Z"
+        },
+        {
+          "id": "7cd33537-e31d-4e05-8abd-283677654a70",
+          "userId": "26c18fed-d130-4bdb-b7b8-fbdc3394e357",
+          "name": "Priya",
+          "joinedAt": "2026-10-06T17:53:15.601Z"
+        }
+      ],
+      "createdAt": "2026-10-06T17:53:15.601Z"
+    },
+    "3a075198-d0d8-4a1e-88d7-661170222385": {
+      "id": "3a075198-d0d8-4a1e-88d7-661170222385",
+      "name": "Adas",
+      "description": "dsad",
+      "inviteCode": "FIN-XWDFLW",
+      "createdBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "members": [
+        {
+          "id": "ef631f07-f468-4e56-9472-5140b41f0f57",
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "joinedAt": "2026-10-08T11:08:48.205Z"
+        }
+      ],
+      "createdAt": "2026-10-08T11:08:48.205Z"
+    },
+    "b8eaeae6-42ec-4726-a811-fba18d58da08": {
+      "id": "b8eaeae6-42ec-4726-a811-fba18d58da08",
+      "name": "flkmlkf",
+      "description": "",
+      "inviteCode": "FIN-O90LJB",
+      "createdBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "members": [
+        {
+          "id": "6cdba5ae-68bb-4719-886b-c1aa5e042cf7",
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "joinedAt": "2026-10-08T11:11:31.821Z"
+        }
+      ],
+      "createdAt": "2026-10-08T11:11:31.821Z"
+    }
+  },
+  "expenses": {
+    "9a17d0e0-b536-45ce-9281-da0d7c21a252": {
+      "id": "9a17d0e0-b536-45ce-9281-da0d7c21a252",
+      "groupId": "3a075198-d0d8-4a1e-88d7-661170222385",
+      "description": "fSF",
+      "amount": 3000,
+      "paidBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "paidByName": "czxc",
+      "category": "Travel",
+      "date": "2026-10-08",
+      "splitMethod": "equal",
+      "participants": [
+        {
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "shareAmount": 3000,
+          "shareValue": 0
+        }
+      ],
+      "createdAt": "2026-10-08T11:09:40.193Z"
+    },
+    "1c228a88-7a19-4c6f-ad5e-7e2d6c483f31": {
+      "id": "1c228a88-7a19-4c6f-ad5e-7e2d6c483f31",
+      "groupId": "3a075198-d0d8-4a1e-88d7-661170222385",
+      "description": "SDSAF",
+      "amount": 2000,
+      "paidBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "paidByName": "czxc",
+      "category": "Other",
+      "date": "2026-10-08",
+      "splitMethod": "equal",
+      "participants": [
+        {
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "shareAmount": 2000,
+          "shareValue": 0
+        }
+      ],
+      "createdAt": "2026-10-08T11:10:04.504Z"
+    }
+  },
+  "settlements": {},
+  "paymentHistory": []
+}

@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #FAFAF7;
+  --color-bg-dark: #111210;
+  --color-card: #FFFFFF;
+  --color-card-dark: #1B1D1A;
+  --color-text: #111111;
+  --color-text-dark: #F5F5F2;
+  --color-text-secondary: #555555;
+  --color-text-muted: #777777;
+  --color-text-muted-dark: #A5AAA4;
+  --color-btn-dark: #1D1D1B;
+  --color-brand: #4F82B2;
+  --color-cta: #5C8FBE;
+  --color-cta-dark: #6FA5D6;
+  --color-soft-blue: #EAF2F8;
+  --color-success: #22A06B;
+  --color-soft-success: #E9F8F0;
+  --color-danger: #E05252;
+  --color-soft-danger: #FDEEEE;
+  --color-warning: #D99A25;
+  --color-soft-warning: #FFF6DF;
+  --color-border: #E7E7E2;
+  --color-border-dark: #2A2C29;
+  --color-illustration: #F1EDE0;
+  --color-mascot: #F4513E;
+  --color-coin: #E9AA35;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body,
+body.dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+
+::selection {
+  background-color: var(--color-soft-blue);
+  color: var(--color-text);
+}
+
+input, textarea, select, button {
+  font-family: inherit;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+/* Focus visible */
+*:focus-visible {
+  outline: 2px solid var(--color-cta);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
