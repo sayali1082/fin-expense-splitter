@@ -16,18 +16,45 @@ const PORT = process.env.PORT || 5000;
 const allowedOrigins = process.env.CLIENT_URL
   ? process.env.CLIENT_URL.split(',').map(s => s.trim())
   : [];
+
+const trustedOrigins = [
+  'https://fin-expense-splitter-nu.vercel.app',
+  'http://localhost:3000',
+  'http://localhost:5173'
+];
+
 app.use(cors({
   origin: (origin, callback) => {
     // Allow requests with no origin (mobile apps, curl, server-to-server)
     if (!origin) return callback(null, true);
     if (allowedOrigins.length === 0) return callback(null, true); // dev: allow all
-    if (allowedOrigins.includes(origin)) return callback(null, true);
+    if (allowedOrigins.includes(origin) || allowedOrigins.includes('*')) return callback(null, true);
+    if (trustedOrigins.includes(origin) || origin.endsWith('.vercel.app')) return callback(null, true);
     callback(new Error('Not allowed by CORS'));
   },
   credentials: true,
 }));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// Root & Health for Render and uptime monitoring
+app.get('/', (req, res) => {
+  res.json({
+    status: 'ok',
+    service: 'FIN Expense Splitter API',
+    version: '1.0.0',
+    timestamp: new Date().toISOString(),
+    endpoints: {
+      health: '/api/health',
+      groups: '/api/groups',
+      users: '/api/users'
+    }
+  });
+});
+
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
 
 // Ensure directories exist
 const uploadsDir = path.join(__dirname, 'uploads');
@@ -77,13 +104,27 @@ const upload = multer({
   }
 });
 
+function findGroup(identifier) {
+  if (!identifier) return null;
+  const cleanId = String(identifier).trim();
+  if (db.groups[cleanId]) return db.groups[cleanId];
+  const lower = cleanId.toLowerCase();
+  return Object.values(db.groups).find(g =>
+    g.id === cleanId ||
+    String(g.inviteCode || '').toLowerCase() === lower ||
+    String(g.code || '').toLowerCase() === lower ||
+    String(g.name || '').trim().toLowerCase() === lower
+  ) || null;
+}
+
 // ===== Helper: Recalculate settlements =====
 function recalculateSettlements(groupId) {
-  const group = db.groups[groupId];
+  const group = findGroup(groupId);
   if (!group) return;
+  const canonicalId = group.id;
 
   const members = group.members || [];
-  const groupExpenses = Object.values(db.expenses).filter(e => e.groupId === groupId);
+  const groupExpenses = Object.values(db.expenses).filter(e => e.groupId === canonicalId);
 
   // Calculate net balances
   const balances = {};
@@ -102,7 +143,7 @@ function recalculateSettlements(groupId) {
 
   // Remove old pending settlements for this group
   for (const [id, s] of Object.entries(db.settlements)) {
-    if (s.groupId === groupId && s.status === 'pending') {
+    if (s.groupId === canonicalId && s.status === 'pending') {
       delete db.settlements[id];
     }
   }
@@ -129,7 +170,7 @@ function recalculateSettlements(groupId) {
       const id = uuidv4();
       db.settlements[id] = {
         id,
-        groupId,
+        groupId: canonicalId,
         fromUserId: debtors[i].userId,
         fromUserName: debtors[i].name,
         toUserId: creditors[j].userId,
@@ -222,7 +263,8 @@ app.delete('/api/users/:userId/payment-qr', (req, res) => {
 
 app.post('/api/groups', (req, res) => {
   try {
-    const { name, description, createdBy, creatorName, members } = req.body;
+    const { name, description, creatorName, members } = req.body;
+    const createdBy = req.body.createdBy || req.body.userId;
     if (!name || !name.trim()) return res.status(400).json({ error: 'Group name is required' });
     if (!createdBy) return res.status(400).json({ error: 'Creator ID is required' });
 
@@ -268,52 +310,66 @@ app.post('/api/groups', (req, res) => {
   }
 });
 
-app.get('/api/groups/user/:userId', (req, res) => {
-  try {
-    const userId = req.params.userId;
-    const userGroups = Object.values(db.groups).filter(g =>
-      g.members.some(m => m.userId === userId)
-    );
+function getUserGroups(userId) {
+  const userGroups = Object.values(db.groups).filter(g =>
+    (g.members || []).some(m => m.userId === userId || m.id === userId)
+  );
 
-    const result = userGroups.map(g => {
-      const groupExpenses = Object.values(db.expenses).filter(e => e.groupId === g.id);
-      
-      // Calculate balance
-      const balances = {};
-      g.members.forEach(m => { balances[m.userId] = 0; });
-      
-      for (const expense of groupExpenses) {
-        if (balances[expense.paidBy] !== undefined) {
-          balances[expense.paidBy] += expense.amount;
-        }
-        for (const p of expense.participants || []) {
-          if (balances[p.userId] !== undefined) {
-            balances[p.userId] -= p.shareAmount;
-          }
+  const result = userGroups.map(g => {
+    const groupExpenses = Object.values(db.expenses).filter(e => e.groupId === g.id);
+    
+    // Calculate balance
+    const balances = {};
+    (g.members || []).forEach(m => { balances[m.userId] = 0; });
+    
+    for (const expense of groupExpenses) {
+      if (balances[expense.paidBy] !== undefined) {
+        balances[expense.paidBy] += expense.amount;
+      }
+      for (const p of expense.participants || []) {
+        if (balances[p.userId] !== undefined) {
+          balances[p.userId] -= p.shareAmount;
         }
       }
+    }
 
-      const totalSpent = groupExpenses.reduce((sum, e) => sum + e.amount, 0);
+    const totalSpent = groupExpenses.reduce((sum, e) => sum + e.amount, 0);
 
-      return {
-        id: g.id,
-        name: g.name,
-        description: g.description,
-        invite_code: g.inviteCode,
-        created_by: g.createdBy,
-        created_at: g.createdAt,
-        memberCount: g.members.length,
-        expenseCount: groupExpenses.length,
-        totalSpent: Math.round(totalSpent * 100) / 100,
-        balance: Math.round((balances[userId] || 0) * 100) / 100,
-        lastActivity: groupExpenses.length > 0
-          ? groupExpenses.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))[0].createdAt
-          : g.createdAt
-      };
-    });
+    return {
+      id: g.id,
+      name: g.name,
+      description: g.description,
+      invite_code: g.inviteCode,
+      inviteCode: g.inviteCode,
+      created_by: g.createdBy,
+      created_at: g.createdAt,
+      members: g.members || [],
+      memberCount: (g.members || []).length,
+      expenseCount: groupExpenses.length,
+      totalSpent: Math.round(totalSpent * 100) / 100,
+      balance: Math.round((balances[userId] || 0) * 100) / 100,
+      lastActivity: groupExpenses.length > 0
+        ? groupExpenses.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))[0].createdAt
+        : g.createdAt
+    };
+  });
 
-    result.sort((a, b) => new Date(b.lastActivity) - new Date(a.lastActivity));
-    res.json(result);
+  result.sort((a, b) => new Date(b.lastActivity) - new Date(a.lastActivity));
+  return result;
+}
+
+app.get('/api/groups/user/:userId', (req, res) => {
+  try {
+    res.json(getUserGroups(req.params.userId));
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to fetch groups' });
+  }
+});
+
+app.get('/api/users/:userId/groups', (req, res) => {
+  try {
+    res.json(getUserGroups(req.params.userId));
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Failed to fetch groups' });
@@ -321,13 +377,13 @@ app.get('/api/groups/user/:userId', (req, res) => {
 });
 
 app.get('/api/groups/invite/:inviteCode', (req, res) => {
-  const group = Object.values(db.groups).find(g => g.inviteCode === req.params.inviteCode);
+  const group = findGroup(req.params.inviteCode);
   if (!group) return res.status(404).json({ error: 'Invalid invite code' });
-  res.json({ ...group, invite_code: group.inviteCode, memberCount: group.members.length });
+  res.json({ ...group, invite_code: group.inviteCode, memberCount: (group.members || []).length });
 });
 
 app.get('/api/groups/:groupId', (req, res) => {
-  const group = db.groups[req.params.groupId];
+  const group = findGroup(req.params.groupId);
   if (!group) return res.status(404).json({ error: 'Group not found' });
 
   const groupExpenses = Object.values(db.expenses)
@@ -343,18 +399,21 @@ app.get('/api/groups/:groupId', (req, res) => {
 
 app.post('/api/groups/join', (req, res) => {
   try {
-    const { inviteCode, userId, userName } = req.body;
+    const inviteCode = req.body.inviteCode || req.body.code;
+    const userId = req.body.userId;
+    const userName = req.body.userName || req.body.name;
     if (!inviteCode) return res.status(400).json({ error: 'Invite code is required' });
     if (!userId) return res.status(400).json({ error: 'User ID is required' });
 
-    const group = Object.values(db.groups).find(g => g.inviteCode === inviteCode);
+    const group = findGroup(inviteCode);
     if (!group) return res.status(404).json({ error: 'Invalid invite code' });
 
-    const existing = group.members.find(m => m.userId === userId);
+    const existing = (group.members || []).find(m => m.userId === userId || m.id === userId);
     if (existing) {
       return res.json({ alreadyMember: true, groupId: group.id, group: { ...group, invite_code: group.inviteCode } });
     }
 
+    if (!group.members) group.members = [];
     group.members.push({
       id: uuidv4(),
       userId,
@@ -372,6 +431,37 @@ app.post('/api/groups/join', (req, res) => {
   }
 });
 
+app.delete('/api/groups/:groupId', (req, res) => {
+  try {
+    const group = findGroup(req.params.groupId);
+    if (!group) return res.status(404).json({ error: 'Group not found' });
+    const groupId = group.id;
+
+    // Delete group
+    delete db.groups[groupId];
+
+    // Delete associated expenses
+    for (const expId of Object.keys(db.expenses)) {
+      if (db.expenses[expId].groupId === groupId) {
+        delete db.expenses[expId];
+      }
+    }
+
+    // Delete associated settlements
+    for (const setKey of Object.keys(db.settlements)) {
+      if (setKey.startsWith(`${groupId}_`)) {
+        delete db.settlements[setKey];
+      }
+    }
+
+    saveDB(db);
+    res.json({ success: true, message: 'Group deleted successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to delete group' });
+  }
+});
+
 // ============ MEMBER ROUTES ============
 
 app.post('/api/groups/:groupId/members', (req, res) => {
@@ -379,7 +469,7 @@ app.post('/api/groups/:groupId/members', (req, res) => {
     const { name } = req.body;
     if (!name || !name.trim()) return res.status(400).json({ error: 'Name is required' });
 
-    const group = db.groups[req.params.groupId];
+    const group = findGroup(req.params.groupId);
     if (!group) return res.status(404).json({ error: 'Group not found' });
 
     const userId = uuidv4();
@@ -387,6 +477,11 @@ app.post('/api/groups/:groupId/members', (req, res) => {
       db.users[userId] = { id: userId, name: name.trim(), mobile: '', acceptsCash: false, qrImage: '', createdAt: new Date().toISOString() };
     }
 
+    if (!group.members) group.members = [];
+    const existing = group.members.find(m => m.name.toLowerCase() === name.trim().toLowerCase());
+    if (existing) {
+      return res.status(200).json({ userId: existing.userId || existing.id, name: existing.name, members: group.members });
+    }
     group.members.push({
       id: uuidv4(),
       userId,
@@ -403,12 +498,12 @@ app.post('/api/groups/:groupId/members', (req, res) => {
 
 app.delete('/api/groups/:groupId/members/:userId', (req, res) => {
   try {
-    const group = db.groups[req.params.groupId];
+    const group = findGroup(req.params.groupId);
     if (!group) return res.status(404).json({ error: 'Group not found' });
 
-    group.members = group.members.filter(m => m.userId !== req.params.userId);
+    group.members = (group.members || []).filter(m => m.userId !== req.params.userId && m.id !== req.params.userId);
     saveDB(db);
-    recalculateSettlements(req.params.groupId);
+    recalculateSettlements(group.id);
 
     res.json({ success: true });
   } catch (err) {
@@ -420,9 +515,14 @@ app.delete('/api/groups/:groupId/members/:userId', (req, res) => {
 
 app.post('/api/groups/:groupId/expenses', (req, res) => {
   try {
-    const { description, amount, paidBy, category, date, splitMethod, participants } = req.body;
+    const group = findGroup(req.params.groupId);
+    if (!group) return res.status(404).json({ error: 'Group not found' });
+    const canonicalGroupId = group.id;
 
-    if (!description) return res.status(400).json({ error: 'Description is required' });
+    const description = req.body.description || req.body.title;
+    const { amount, paidBy, category, date, splitMethod, participants } = req.body;
+
+    if (!description || !description.trim()) return res.status(400).json({ error: 'Description is required' });
     if (!amount || amount <= 0) return res.status(400).json({ error: 'Valid amount is required' });
     if (!paidBy) return res.status(400).json({ error: 'Paid by is required' });
     if (!participants || participants.length === 0) return res.status(400).json({ error: 'At least one participant is required' });
@@ -430,16 +530,35 @@ app.post('/api/groups/:groupId/expenses', (req, res) => {
     const id = uuidv4();
     const method = splitMethod || 'equal';
 
-    const processedParticipants = participants.map(p => {
+    // Normalize participants - handle array of strings (user IDs) or array of objects
+    const rawParticipants = participants.map(p => {
+      if (typeof p === 'string') {
+        const member = (group.members || []).find(m => m.userId === p || m.id === p);
+        return {
+          userId: p,
+          name: member ? member.name : (db.users[p]?.name || 'Member')
+        };
+      }
+      const member = (group.members || []).find(m => m.userId === p.userId || m.id === p.userId);
+      return {
+        userId: p.userId,
+        name: p.name || (member ? member.name : (db.users[p.userId]?.name || 'Member')),
+        amount: p.amount,
+        percentage: p.percentage,
+        shares: p.shares
+      };
+    });
+
+    const processedParticipants = rawParticipants.map(p => {
       let shareAmount = 0;
       if (method === 'equal') {
-        shareAmount = amount / participants.length;
+        shareAmount = amount / rawParticipants.length;
       } else if (method === 'exact') {
         shareAmount = p.amount || 0;
       } else if (method === 'percentage') {
         shareAmount = (amount * (p.percentage || 0)) / 100;
       } else if (method === 'shares') {
-        const totalShares = participants.reduce((sum, pp) => sum + (pp.shares || 1), 0);
+        const totalShares = rawParticipants.reduce((sum, pp) => sum + (pp.shares || 1), 0);
         shareAmount = (amount * (p.shares || 1)) / totalShares;
       }
 
@@ -451,14 +570,21 @@ app.post('/api/groups/:groupId/expenses', (req, res) => {
       };
     });
 
+    // Payer can be ANY member in the group
+    const payerMember = (group.members || []).find(m => m.userId === paidBy || m.id === paidBy);
+    const paidByName = payerMember?.name ||
+      processedParticipants.find(p => p.userId === paidBy)?.name ||
+      db.users[paidBy]?.name ||
+      'Member';
+
     db.expenses[id] = {
       id,
-      groupId: req.params.groupId,
-      description,
-      amount,
+      groupId: canonicalGroupId,
+      description: description.trim(),
+      title: description.trim(),
+      amount: Number(amount),
       paidBy,
-      paidByName: participants.find(p => p.userId === paidBy)?.name || 
-                  db.groups[req.params.groupId]?.members.find(m => m.userId === paidBy)?.name || 'Unknown',
+      paidByName,
       category: category || 'Other',
       date: date || new Date().toISOString().split('T')[0],
       splitMethod: method,
@@ -467,9 +593,12 @@ app.post('/api/groups/:groupId/expenses', (req, res) => {
     };
 
     saveDB(db);
-    recalculateSettlements(req.params.groupId);
+    recalculateSettlements(canonicalGroupId);
 
-    res.status(201).json(db.expenses[id]);
+    res.status(201).json({
+      ...db.expenses[id],
+      expense: db.expenses[id]
+    });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Failed to add expense' });
@@ -477,8 +606,11 @@ app.post('/api/groups/:groupId/expenses', (req, res) => {
 });
 
 app.get('/api/groups/:groupId/expenses', (req, res) => {
+  const group = findGroup(req.params.groupId);
+  if (!group) return res.status(404).json({ error: 'Group not found' });
+
   const groupExpenses = Object.values(db.expenses)
-    .filter(e => e.groupId === req.params.groupId)
+    .filter(e => e.groupId === group.id)
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
   res.json(groupExpenses);
 });
@@ -488,22 +620,42 @@ app.put('/api/expenses/:expenseId', (req, res) => {
     const expense = db.expenses[req.params.expenseId];
     if (!expense) return res.status(404).json({ error: 'Expense not found' });
 
-    const { description, amount, paidBy, category, date, splitMethod, participants } = req.body;
+    const group = findGroup(expense.groupId);
+    const description = req.body.description || req.body.title || expense.description;
+    const { amount, paidBy, category, date, splitMethod, participants } = req.body;
 
-    const newAmount = amount || expense.amount;
+    const newAmount = amount ? Number(amount) : expense.amount;
     const method = splitMethod || expense.splitMethod;
 
     if (participants && participants.length > 0) {
-      const processedParticipants = participants.map(p => {
+      const rawParticipants = participants.map(p => {
+        if (typeof p === 'string') {
+          const member = group ? (group.members || []).find(m => m.userId === p || m.id === p) : null;
+          return {
+            userId: p,
+            name: member ? member.name : (db.users[p]?.name || 'Member')
+          };
+        }
+        const member = group ? (group.members || []).find(m => m.userId === p.userId || m.id === p.userId) : null;
+        return {
+          userId: p.userId,
+          name: p.name || (member ? member.name : (db.users[p.userId]?.name || 'Member')),
+          amount: p.amount,
+          percentage: p.percentage,
+          shares: p.shares
+        };
+      });
+
+      const processedParticipants = rawParticipants.map(p => {
         let shareAmount = 0;
         if (method === 'equal') {
-          shareAmount = newAmount / participants.length;
+          shareAmount = newAmount / rawParticipants.length;
         } else if (method === 'exact') {
           shareAmount = p.amount || 0;
         } else if (method === 'percentage') {
           shareAmount = (newAmount * (p.percentage || 0)) / 100;
         } else if (method === 'shares') {
-          const totalShares = participants.reduce((sum, pp) => sum + (pp.shares || 1), 0);
+          const totalShares = rawParticipants.reduce((sum, pp) => sum + (pp.shares || 1), 0);
           shareAmount = (newAmount * (p.shares || 1)) / totalShares;
         }
         return {
@@ -516,16 +668,16 @@ app.put('/api/expenses/:expenseId', (req, res) => {
       expense.participants = processedParticipants;
     }
 
-    expense.description = description || expense.description;
+    expense.description = description;
+    expense.title = description;
     expense.amount = newAmount;
     expense.paidBy = paidBy || expense.paidBy;
     expense.category = category || expense.category;
     expense.date = date || expense.date;
     expense.splitMethod = method;
 
-    if (paidBy) {
-      const group = db.groups[expense.groupId];
-      expense.paidByName = group?.members.find(m => m.userId === paidBy)?.name || expense.paidByName;
+    if (paidBy && group) {
+      expense.paidByName = (group.members || []).find(m => m.userId === paidBy || m.id === paidBy)?.name || expense.paidByName;
     }
 
     saveDB(db);
@@ -553,13 +705,13 @@ app.delete('/api/expenses/:expenseId', (req, res) => {
 // ============ BALANCE ROUTES ============
 
 app.get('/api/groups/:groupId/balances', (req, res) => {
-  const group = db.groups[req.params.groupId];
+  const group = findGroup(req.params.groupId);
   if (!group) return res.status(404).json({ error: 'Group not found' });
 
-  const groupExpenses = Object.values(db.expenses).filter(e => e.groupId === req.params.groupId);
+  const groupExpenses = Object.values(db.expenses).filter(e => e.groupId === group.id);
 
   const balances = {};
-  group.members.forEach(m => {
+  (group.members || []).forEach(m => {
     balances[m.userId] = { userId: m.userId, name: m.name, amount: 0 };
   });
 
@@ -585,8 +737,11 @@ app.get('/api/groups/:groupId/balances', (req, res) => {
 // ============ SETTLEMENT ROUTES ============
 
 app.get('/api/groups/:groupId/settlements', (req, res) => {
+  const group = findGroup(req.params.groupId);
+  if (!group) return res.status(404).json({ error: 'Group not found' });
+
   const settlements = Object.values(db.settlements)
-    .filter(s => s.groupId === req.params.groupId)
+    .filter(s => s.groupId === group.id)
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
   res.json(settlements);
 });
@@ -636,7 +791,7 @@ app.post('/api/settlements/:settlementId/reminder', (req, res) => {
 // ============ SHARE ROUTES ============
 
 app.get('/api/groups/:groupId/share', (req, res) => {
-  const group = db.groups[req.params.groupId];
+  const group = findGroup(req.params.groupId);
   if (!group) return res.status(404).json({ error: 'Group not found' });
   res.json({
     groupName: group.name,
@@ -648,8 +803,11 @@ app.get('/api/groups/:groupId/share', (req, res) => {
 // ============ PAYMENT HISTORY ============
 
 app.get('/api/groups/:groupId/payment-history', (req, res) => {
+  const group = findGroup(req.params.groupId);
+  if (!group) return res.status(404).json({ error: 'Group not found' });
+
   const history = (db.paymentHistory || [])
-    .filter(h => h.groupId === req.params.groupId)
+    .filter(h => h.groupId === group.id)
     .sort((a, b) => new Date(b.paidAt) - new Date(a.paidAt));
   res.json(history);
 });

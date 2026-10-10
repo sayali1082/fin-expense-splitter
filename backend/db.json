@@ -27,10 +27,194 @@
     "3957dcf6-53b4-4895-a27e-d042726c7519": {
       "id": "3957dcf6-53b4-4895-a27e-d042726c7519",
       "name": "czxc",
+      "mobile": "9689316418",
+      "acceptsCash": true,
+      "qrImage": "/uploads/qr-1791660688651-2ZHdEu.png",
+      "createdAt": "2026-10-08T11:08:40.558Z"
+    },
+    "181d37b4-a1e0-410f-bd4a-55a22c3b3fa8": {
+      "id": "181d37b4-a1e0-410f-bd4a-55a22c3b3fa8",
+      "name": "ss",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-09T08:12:09.798Z"
+    },
+    "89bc0fa5-79cf-4437-9cca-2bf5d8048140": {
+      "id": "89bc0fa5-79cf-4437-9cca-2bf5d8048140",
+      "name": "saasa",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-09T08:12:09.798Z"
+    },
+    "eca8f621-5bbc-47ac-8bc8-435148312305": {
+      "id": "eca8f621-5bbc-47ac-8bc8-435148312305",
+      "name": "saf",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-09T08:12:45.609Z"
+    },
+    "50569d20-ed83-4422-b2d8-94c28e46de97": {
+      "id": "50569d20-ed83-4422-b2d8-94c28e46de97",
+      "name": "asaf",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-09T18:04:50.001Z"
+    },
+    "fac9f8d7-cfcb-45a1-9050-fe4cc4ee2042": {
+      "id": "fac9f8d7-cfcb-45a1-9050-fe4cc4ee2042",
+      "name": "sf",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-09T18:04:50.001Z"
+    },
+    "d467ba5c-2531-4660-b993-cf53f7bc5d11": {
+      "id": "d467ba5c-2531-4660-b993-cf53f7bc5d11",
+      "name": "vx",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-09T18:37:28.164Z"
+    },
+    "3b247c33-3b7b-44ec-be5f-19270057856c": {
+      "id": "3b247c33-3b7b-44ec-be5f-19270057856c",
+      "name": "ssd",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-09T19:21:31.046Z"
+    },
+    "61e85463-3259-4ca2-994f-84871a0552cf": {
+      "id": "61e85463-3259-4ca2-994f-84871a0552cf",
+      "name": "dd",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-09T19:21:31.046Z"
+    },
+    "53bc29d4-31fc-478b-9cbf-cf5f27be0bb8": {
+      "id": "53bc29d4-31fc-478b-9cbf-cf5f27be0bb8",
+      "name": "ain",
       "mobile": "",
       "acceptsCash": true,
-      "qrImage": "/uploads/qr-1791457845415-Lri7Tl.png",
-      "createdAt": "2026-10-08T11:08:40.558Z"
+      "qrImage": "/uploads/qr-1791574423810-13RezW.png",
+      "createdAt": "2026-10-09T19:33:14.016Z"
+    },
+    "c28a2134-afbc-47d8-b8af-d7e2fbc03366": {
+      "id": "c28a2134-afbc-47d8-b8af-d7e2fbc03366",
+      "name": "Tester Sayali",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-09T19:36:10.466Z"
+    },
+    "00b39d30-671c-43a9-afee-e9392137bf22": {
+      "id": "00b39d30-671c-43a9-afee-e9392137bf22",
+      "name": "Aman",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-09T19:36:10.495Z"
+    },
+    "b42c8c80-66d5-459e-b3bb-8a051f8f182c": {
+      "id": "b42c8c80-66d5-459e-b3bb-8a051f8f182c",
+      "name": "Rohan",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-09T19:36:10.495Z"
+    },
+    "e43c67f3-aa22-41b3-bd9b-f96d2104d13b": {
+      "id": "e43c67f3-aa22-41b3-bd9b-f96d2104d13b",
+      "name": "Sneha",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-09T19:36:10.531Z"
+    },
+    "7ba57fe7-afc2-42ad-9364-2c71834148c5": {
+      "id": "7ba57fe7-afc2-42ad-9364-2c71834148c5",
+      "name": "Friend One",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-09T19:54:41.099Z"
+    },
+    "408f559b-f4d1-40f8-8a01-f432b4a018c5": {
+      "id": "408f559b-f4d1-40f8-8a01-f432b4a018c5",
+      "name": "Friend Two",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-09T19:54:41.099Z"
+    },
+    "51bc2ba6-81e5-402e-a9b8-4422274a11cb": {
+      "id": "51bc2ba6-81e5-402e-a9b8-4422274a11cb",
+      "name": "s",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-10T05:11:24.819Z"
+    },
+    "9a09850b-1f13-492f-82f4-922ed43d213a": {
+      "id": "9a09850b-1f13-492f-82f4-922ed43d213a",
+      "name": "w",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-10T05:11:24.819Z"
+    },
+    "51db9431-1c49-490b-bd2d-1550bf5e4b0a": {
+      "id": "51db9431-1c49-490b-bd2d-1550bf5e4b0a",
+      "name": "arin",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-10T05:20:10.630Z"
+    },
+    "b2542e06-c4e8-4876-bbce-9e5fbd9c7751": {
+      "id": "b2542e06-c4e8-4876-bbce-9e5fbd9c7751",
+      "name": "arin",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-10T19:20:20.528Z"
+    },
+    "aa78c7ea-7c96-4179-b117-cf92b4bdefa4": {
+      "id": "aa78c7ea-7c96-4179-b117-cf92b4bdefa4",
+      "name": "sayali",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-10T19:20:20.528Z"
+    },
+    "564f369d-405a-4b1b-b31c-dceaa8ff0788": {
+      "id": "564f369d-405a-4b1b-b31c-dceaa8ff0788",
+      "name": "anu",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-10T19:20:20.528Z"
+    },
+    "35531715-16e8-464c-bb62-d08b3fb186e9": {
+      "id": "35531715-16e8-464c-bb62-d08b3fb186e9",
+      "name": "arin",
+      "mobile": "6987452132",
+      "acceptsCash": true,
+      "qrImage": "/uploads/qr-1791660825848-uF0Old.png",
+      "createdAt": "2026-10-10T19:30:43.247Z"
+    },
+    "48eed8e7-64e0-410d-9e6d-d679ac1dbcdf": {
+      "id": "48eed8e7-64e0-410d-9e6d-d679ac1dbcdf",
+      "name": "sayali",
+      "mobile": "",
+      "acceptsCash": false,
+      "qrImage": "",
+      "createdAt": "2026-10-10T19:30:43.247Z"
     }
   },
   "groups": {
@@ -93,6 +277,236 @@
         }
       ],
       "createdAt": "2026-10-08T11:11:31.821Z"
+    },
+    "5706b51e-6fc0-48f8-9013-8f6940958cd7": {
+      "id": "5706b51e-6fc0-48f8-9013-8f6940958cd7",
+      "name": "sss",
+      "description": "",
+      "inviteCode": "FIN-D6YU2F",
+      "createdBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "members": [
+        {
+          "id": "972654f8-a8eb-48b9-9029-11c534ddc82c",
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "joinedAt": "2026-10-09T08:12:09.798Z"
+        },
+        {
+          "id": "90c3e09e-0696-4541-8fe4-c856ff0c1dbf",
+          "userId": "181d37b4-a1e0-410f-bd4a-55a22c3b3fa8",
+          "name": "ss",
+          "joinedAt": "2026-10-09T08:12:09.798Z"
+        },
+        {
+          "id": "ea5e27dc-e233-4d97-b9ea-8caecfef63bf",
+          "userId": "89bc0fa5-79cf-4437-9cca-2bf5d8048140",
+          "name": "saasa",
+          "joinedAt": "2026-10-09T08:12:09.798Z"
+        },
+        {
+          "id": "820dc7f1-4f1f-412f-aa86-4e0165896f72",
+          "userId": "eca8f621-5bbc-47ac-8bc8-435148312305",
+          "name": "saf",
+          "joinedAt": "2026-10-09T08:12:45.610Z"
+        }
+      ],
+      "createdAt": "2026-10-09T08:12:09.798Z"
+    },
+    "103fe660-be1d-43ec-a8a6-69956e167e37": {
+      "id": "103fe660-be1d-43ec-a8a6-69956e167e37",
+      "name": "sdkmvsdkv",
+      "description": "m m,",
+      "inviteCode": "FIN-BH_ZLK",
+      "createdBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "members": [
+        {
+          "id": "5e95c02d-f44f-48d6-a03e-422e2dcd650a",
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "joinedAt": "2026-10-09T18:04:50.001Z"
+        },
+        {
+          "id": "cc39509a-985d-4577-9c64-03d56c425309",
+          "userId": "50569d20-ed83-4422-b2d8-94c28e46de97",
+          "name": "asaf",
+          "joinedAt": "2026-10-09T18:04:50.001Z"
+        },
+        {
+          "id": "5c1511a5-85e1-4f16-9c0a-b979d4431994",
+          "userId": "fac9f8d7-cfcb-45a1-9050-fe4cc4ee2042",
+          "name": "sf",
+          "joinedAt": "2026-10-09T18:04:50.001Z"
+        }
+      ],
+      "createdAt": "2026-10-09T18:04:50.001Z"
+    },
+    "72628ee5-7043-452b-8bf6-48d1c7a04294": {
+      "id": "72628ee5-7043-452b-8bf6-48d1c7a04294",
+      "name": "ss",
+      "description": "s",
+      "inviteCode": "FIN-QLTCYU",
+      "createdBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "members": [
+        {
+          "id": "402cf189-29c1-4e20-a7e7-bb61fb8a17d6",
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "joinedAt": "2026-10-09T18:37:28.164Z"
+        },
+        {
+          "id": "6c49a0db-fb07-4eeb-b361-37f17ba1d54f",
+          "userId": "d467ba5c-2531-4660-b993-cf53f7bc5d11",
+          "name": "vx",
+          "joinedAt": "2026-10-09T18:37:28.164Z"
+        }
+      ],
+      "createdAt": "2026-10-09T18:37:28.164Z"
+    },
+    "77d20ecd-b5ae-434b-b56e-a2907dd9090a": {
+      "id": "77d20ecd-b5ae-434b-b56e-a2907dd9090a",
+      "name": "sdff",
+      "description": "fds",
+      "inviteCode": "FIN-_MON7J",
+      "createdBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "members": [
+        {
+          "id": "12cedb77-cffe-4e42-abae-79909c3d3e0e",
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "joinedAt": "2026-10-09T18:54:36.080Z"
+        }
+      ],
+      "createdAt": "2026-10-09T18:54:36.080Z"
+    },
+    "8333cb11-cdce-4981-9590-3fac7562d33f": {
+      "id": "8333cb11-cdce-4981-9590-3fac7562d33f",
+      "name": "dd",
+      "description": "dd",
+      "inviteCode": "FIN-HQWE_Y",
+      "createdBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "members": [
+        {
+          "id": "0bb45e54-1297-4468-baa2-8bfd92f210d4",
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "joinedAt": "2026-10-09T19:21:31.046Z"
+        },
+        {
+          "id": "c0775f16-2e9c-48bb-9970-ebebda992be0",
+          "userId": "3b247c33-3b7b-44ec-be5f-19270057856c",
+          "name": "ssd",
+          "joinedAt": "2026-10-09T19:21:31.046Z"
+        },
+        {
+          "id": "8ba8ba28-c720-48f6-a2c3-416ee81ff204",
+          "userId": "61e85463-3259-4ca2-994f-84871a0552cf",
+          "name": "dd",
+          "joinedAt": "2026-10-09T19:21:31.046Z"
+        },
+        {
+          "id": "ae164aa5-3a11-41e8-bd61-7be37934f57a",
+          "userId": "53bc29d4-31fc-478b-9cbf-cf5f27be0bb8",
+          "name": "ain",
+          "joinedAt": "2026-10-09T19:33:20.208Z"
+        }
+      ],
+      "createdAt": "2026-10-09T19:21:31.046Z"
+    },
+    "45ccc365-9501-471b-ab04-d14e5502ba7c": {
+      "id": "45ccc365-9501-471b-ab04-d14e5502ba7c",
+      "name": "aa",
+      "description": "",
+      "inviteCode": "FIN-4_2YZM",
+      "createdBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "members": [
+        {
+          "id": "572c1097-dd54-41f5-a257-6ed0fa9294f6",
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "joinedAt": "2026-10-10T05:11:24.819Z"
+        },
+        {
+          "id": "db621fd9-6a5f-4ef2-a895-26f272c3ed3f",
+          "userId": "51bc2ba6-81e5-402e-a9b8-4422274a11cb",
+          "name": "s",
+          "joinedAt": "2026-10-10T05:11:24.819Z"
+        },
+        {
+          "id": "5cf1aef7-8c5b-4e10-879f-437ef68c1a87",
+          "userId": "9a09850b-1f13-492f-82f4-922ed43d213a",
+          "name": "w",
+          "joinedAt": "2026-10-10T05:11:24.819Z"
+        },
+        {
+          "id": "2cdee123-5f74-4a86-8936-8dcf17569513",
+          "userId": "51db9431-1c49-490b-bd2d-1550bf5e4b0a",
+          "name": "arin",
+          "joinedAt": "2026-10-10T05:20:14.658Z"
+        }
+      ],
+      "createdAt": "2026-10-10T05:11:24.819Z"
+    },
+    "e0510b14-f61f-43cb-b432-c472a650b9f1": {
+      "id": "e0510b14-f61f-43cb-b432-c472a650b9f1",
+      "name": "gt",
+      "description": "",
+      "inviteCode": "FIN-BSSJ07",
+      "createdBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "members": [
+        {
+          "id": "a68b6283-da34-4866-8418-cc0a859d5da5",
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "joinedAt": "2026-10-10T19:20:20.528Z"
+        },
+        {
+          "id": "4b68e8ab-9cba-40d0-9965-1d3363da0c4e",
+          "userId": "b2542e06-c4e8-4876-bbce-9e5fbd9c7751",
+          "name": "arin",
+          "joinedAt": "2026-10-10T19:20:20.528Z"
+        },
+        {
+          "id": "cda87a30-c736-4fa9-96e3-bdc72a6805f3",
+          "userId": "aa78c7ea-7c96-4179-b117-cf92b4bdefa4",
+          "name": "sayali",
+          "joinedAt": "2026-10-10T19:20:20.528Z"
+        },
+        {
+          "id": "b4283608-0edd-4ae2-82e0-14e7f910c89c",
+          "userId": "564f369d-405a-4b1b-b31c-dceaa8ff0788",
+          "name": "anu",
+          "joinedAt": "2026-10-10T19:20:20.528Z"
+        }
+      ],
+      "createdAt": "2026-10-10T19:20:20.528Z"
+    },
+    "033e117f-0bd7-48d8-9873-6386ba22b3b5": {
+      "id": "033e117f-0bd7-48d8-9873-6386ba22b3b5",
+      "name": "dgt",
+      "description": "",
+      "inviteCode": "FIN-_G7XWR",
+      "createdBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "members": [
+        {
+          "id": "4d48f577-4489-43d7-a494-4bfd6ad18b03",
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "joinedAt": "2026-10-10T19:30:43.247Z"
+        },
+        {
+          "id": "7f8a59f4-6ca2-4983-9132-adbafec68bc5",
+          "userId": "35531715-16e8-464c-bb62-d08b3fb186e9",
+          "name": "arin",
+          "joinedAt": "2026-10-10T19:30:43.247Z"
+        },
+        {
+          "id": "85e06761-8aee-474d-adb3-56c2329e771d",
+          "userId": "48eed8e7-64e0-410d-9e6d-d679ac1dbcdf",
+          "name": "sayali",
+          "joinedAt": "2026-10-10T19:30:43.247Z"
+        }
+      ],
+      "createdAt": "2026-10-10T19:30:43.247Z"
     }
   },
   "expenses": {
@@ -135,8 +549,582 @@
         }
       ],
       "createdAt": "2026-10-08T11:10:04.504Z"
+    },
+    "d971a533-e2cc-4ecc-95ac-4f8561fbed8d": {
+      "id": "d971a533-e2cc-4ecc-95ac-4f8561fbed8d",
+      "groupId": "5706b51e-6fc0-48f8-9013-8f6940958cd7",
+      "description": "hshd",
+      "amount": 5222,
+      "paidBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "paidByName": "czxc",
+      "category": "Travel",
+      "date": "2026-10-09",
+      "splitMethod": "equal",
+      "participants": [
+        {
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "shareAmount": 1305.5,
+          "shareValue": 0
+        },
+        {
+          "userId": "181d37b4-a1e0-410f-bd4a-55a22c3b3fa8",
+          "name": "ss",
+          "shareAmount": 1305.5,
+          "shareValue": 0
+        },
+        {
+          "userId": "89bc0fa5-79cf-4437-9cca-2bf5d8048140",
+          "name": "saasa",
+          "shareAmount": 1305.5,
+          "shareValue": 0
+        },
+        {
+          "userId": "eca8f621-5bbc-47ac-8bc8-435148312305",
+          "name": "saf",
+          "shareAmount": 1305.5,
+          "shareValue": 0
+        }
+      ],
+      "createdAt": "2026-10-09T08:12:58.653Z"
+    },
+    "9304c2d4-e67a-43aa-a977-b4861735c891": {
+      "id": "9304c2d4-e67a-43aa-a977-b4861735c891",
+      "groupId": "103fe660-be1d-43ec-a8a6-69956e167e37",
+      "description": "dinner",
+      "amount": 1000,
+      "paidBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "paidByName": "czxc",
+      "category": "Food",
+      "date": "2026-10-09",
+      "splitMethod": "equal",
+      "participants": [
+        {
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "shareAmount": 333.33,
+          "shareValue": 0
+        },
+        {
+          "userId": "50569d20-ed83-4422-b2d8-94c28e46de97",
+          "name": "asaf",
+          "shareAmount": 333.33,
+          "shareValue": 0
+        },
+        {
+          "userId": "fac9f8d7-cfcb-45a1-9050-fe4cc4ee2042",
+          "name": "sf",
+          "shareAmount": 333.33,
+          "shareValue": 0
+        }
+      ],
+      "createdAt": "2026-10-09T18:05:12.542Z"
+    },
+    "6866d234-20a2-476d-9bbc-a5664bdd84b6": {
+      "id": "6866d234-20a2-476d-9bbc-a5664bdd84b6",
+      "groupId": "103fe660-be1d-43ec-a8a6-69956e167e37",
+      "description": "trr",
+      "amount": 3000,
+      "paidBy": "50569d20-ed83-4422-b2d8-94c28e46de97",
+      "paidByName": "asaf",
+      "category": "Other",
+      "date": "2026-10-09",
+      "splitMethod": "equal",
+      "participants": [
+        {
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "shareAmount": 1000,
+          "shareValue": 0
+        },
+        {
+          "userId": "50569d20-ed83-4422-b2d8-94c28e46de97",
+          "name": "asaf",
+          "shareAmount": 1000,
+          "shareValue": 0
+        },
+        {
+          "userId": "fac9f8d7-cfcb-45a1-9050-fe4cc4ee2042",
+          "name": "sf",
+          "shareAmount": 1000,
+          "shareValue": 0
+        }
+      ],
+      "createdAt": "2026-10-09T18:05:27.083Z"
+    },
+    "8f5ccbac-3c24-4791-9afd-1ccd7be76d17": {
+      "id": "8f5ccbac-3c24-4791-9afd-1ccd7be76d17",
+      "groupId": "72628ee5-7043-452b-8bf6-48d1c7a04294",
+      "description": ",,fss",
+      "amount": 1000,
+      "paidBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "paidByName": "czxc",
+      "category": "Other",
+      "date": "2026-10-09",
+      "splitMethod": "equal",
+      "participants": [
+        {
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "shareAmount": 500,
+          "shareValue": 0
+        },
+        {
+          "userId": "d467ba5c-2531-4660-b993-cf53f7bc5d11",
+          "name": "vx",
+          "shareAmount": 500,
+          "shareValue": 0
+        }
+      ],
+      "createdAt": "2026-10-09T18:37:43.076Z"
+    },
+    "4e37aa96-e3b2-482f-beee-90e561769cd1": {
+      "id": "4e37aa96-e3b2-482f-beee-90e561769cd1",
+      "groupId": "8333cb11-cdce-4981-9590-3fac7562d33f",
+      "description": "sdd",
+      "title": "sdd",
+      "amount": 5112,
+      "paidBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "paidByName": "czxc",
+      "category": "Other",
+      "date": "2026-10-09",
+      "splitMethod": "equal",
+      "participants": [
+        {
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "shareAmount": 1704,
+          "shareValue": 0
+        },
+        {
+          "userId": "3b247c33-3b7b-44ec-be5f-19270057856c",
+          "name": "ssd",
+          "shareAmount": 1704,
+          "shareValue": 0
+        },
+        {
+          "userId": "61e85463-3259-4ca2-994f-84871a0552cf",
+          "name": "dd",
+          "shareAmount": 1704,
+          "shareValue": 0
+        }
+      ],
+      "createdAt": "2026-10-09T19:21:47.427Z"
+    },
+    "c72750f5-fbb9-490c-a157-0dd530804ded": {
+      "id": "c72750f5-fbb9-490c-a157-0dd530804ded",
+      "groupId": "8333cb11-cdce-4981-9590-3fac7562d33f",
+      "description": "dd",
+      "title": "dd",
+      "amount": 3000,
+      "paidBy": "61e85463-3259-4ca2-994f-84871a0552cf",
+      "paidByName": "dd",
+      "category": "Other",
+      "date": "2026-10-09",
+      "splitMethod": "equal",
+      "participants": [
+        {
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "shareAmount": 1000,
+          "shareValue": 0
+        },
+        {
+          "userId": "3b247c33-3b7b-44ec-be5f-19270057856c",
+          "name": "ssd",
+          "shareAmount": 1000,
+          "shareValue": 0
+        },
+        {
+          "userId": "61e85463-3259-4ca2-994f-84871a0552cf",
+          "name": "dd",
+          "shareAmount": 1000,
+          "shareValue": 0
+        }
+      ],
+      "createdAt": "2026-10-09T19:32:00.534Z"
+    },
+    "e47190b7-639f-4aaf-8291-1bdb78686840": {
+      "id": "e47190b7-639f-4aaf-8291-1bdb78686840",
+      "groupId": "45ccc365-9501-471b-ab04-d14e5502ba7c",
+      "description": "d",
+      "title": "d",
+      "amount": 2000,
+      "paidBy": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "paidByName": "czxc",
+      "category": "Other",
+      "date": "2026-10-10",
+      "splitMethod": "equal",
+      "participants": [
+        {
+          "userId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+          "name": "czxc",
+          "shareAmount": 500,
+          "shareValue": 0
+        },
+        {
+          "userId": "51bc2ba6-81e5-402e-a9b8-4422274a11cb",
+          "name": "s",
+          "shareAmount": 500,
+          "shareValue": 0
+        },
+        {
+          "userId": "9a09850b-1f13-492f-82f4-922ed43d213a",
+          "name": "w",
+          "shareAmount": 500,
+          "shareValue": 0
+        },
+        {
+          "userId": "51db9431-1c49-490b-bd2d-1550bf5e4b0a",
+          "name": "arin",
+          "shareAmount": 500,
+          "shareValue": 0
+        }
+      ],
+      "createdAt": "2026-10-10T13:20:12.064Z"
+    },
+    "ac86ef90-6b23-4825-9fd6-2514b710bf3c": {
+      "id": "ac86ef90-6b23-4825-9fd6-2514b710bf3c",
+      "groupId": "e0510b14-f61f-43cb-b432-c472a650b9f1",
+      "description": "aa",
+      "title": "aa",
+      "amount": 1000,
+      "paidBy": "aa78c7ea-7c96-4179-b117-cf92b4bdefa4",
+      "paidByName": "sayali",
+      "category": "Other",
+      "date": "2026-10-10",
+      "splitMethod": "equal",
+      "participants": [
+        {
+          "userId": "b2542e06-c4e8-4876-bbce-9e5fbd9c7751",
+          "name": "arin",
+          "shareAmount": 333.33,
+          "shareValue": 0
+        },
+        {
+          "userId": "aa78c7ea-7c96-4179-b117-cf92b4bdefa4",
+          "name": "sayali",
+          "shareAmount": 333.33,
+          "shareValue": 0
+        },
+        {
+          "userId": "564f369d-405a-4b1b-b31c-dceaa8ff0788",
+          "name": "anu",
+          "shareAmount": 333.33,
+          "shareValue": 0
+        }
+      ],
+      "createdAt": "2026-10-10T19:20:42.247Z"
+    },
+    "be49d00a-49ae-447d-b685-c3006cd52e37": {
+      "id": "be49d00a-49ae-447d-b685-c3006cd52e37",
+      "groupId": "e0510b14-f61f-43cb-b432-c472a650b9f1",
+      "description": "travle",
+      "title": "travle",
+      "amount": 3000,
+      "paidBy": "b2542e06-c4e8-4876-bbce-9e5fbd9c7751",
+      "paidByName": "arin",
+      "category": "Other",
+      "date": "2026-10-10",
+      "splitMethod": "equal",
+      "participants": [
+        {
+          "userId": "b2542e06-c4e8-4876-bbce-9e5fbd9c7751",
+          "name": "arin",
+          "shareAmount": 1000,
+          "shareValue": 0
+        },
+        {
+          "userId": "aa78c7ea-7c96-4179-b117-cf92b4bdefa4",
+          "name": "sayali",
+          "shareAmount": 1000,
+          "shareValue": 0
+        },
+        {
+          "userId": "564f369d-405a-4b1b-b31c-dceaa8ff0788",
+          "name": "anu",
+          "shareAmount": 1000,
+          "shareValue": 0
+        }
+      ],
+      "createdAt": "2026-10-10T19:21:09.727Z"
     }
   },
-  "settlements": {},
-  "paymentHistory": []
+  "settlements": {
+    "fb995c67-5bcb-4ab5-aed4-7a2c3fadd727": {
+      "id": "fb995c67-5bcb-4ab5-aed4-7a2c3fadd727",
+      "groupId": "5706b51e-6fc0-48f8-9013-8f6940958cd7",
+      "fromUserId": "181d37b4-a1e0-410f-bd4a-55a22c3b3fa8",
+      "fromUserName": "ss",
+      "toUserId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "toUserName": "czxc",
+      "amount": 1305.5,
+      "status": "paid",
+      "paidAt": "2026-10-09T08:13:28.265Z",
+      "createdAt": "2026-10-09T08:12:58.665Z"
+    },
+    "cbd3dd41-967d-4a20-8ee2-69f261793302": {
+      "id": "cbd3dd41-967d-4a20-8ee2-69f261793302",
+      "groupId": "5706b51e-6fc0-48f8-9013-8f6940958cd7",
+      "fromUserId": "89bc0fa5-79cf-4437-9cca-2bf5d8048140",
+      "fromUserName": "saasa",
+      "toUserId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "toUserName": "czxc",
+      "amount": 1305.5,
+      "status": "pending",
+      "paidAt": null,
+      "createdAt": "2026-10-09T08:12:58.665Z"
+    },
+    "ba977e70-1da0-40a1-8406-d9f98cfe3035": {
+      "id": "ba977e70-1da0-40a1-8406-d9f98cfe3035",
+      "groupId": "5706b51e-6fc0-48f8-9013-8f6940958cd7",
+      "fromUserId": "eca8f621-5bbc-47ac-8bc8-435148312305",
+      "fromUserName": "saf",
+      "toUserId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "toUserName": "czxc",
+      "amount": 1305.5,
+      "status": "pending",
+      "paidAt": null,
+      "createdAt": "2026-10-09T08:12:58.665Z"
+    },
+    "d45af33d-c288-4893-a236-bfb4d238e206": {
+      "id": "d45af33d-c288-4893-a236-bfb4d238e206",
+      "groupId": "103fe660-be1d-43ec-a8a6-69956e167e37",
+      "fromUserId": "fac9f8d7-cfcb-45a1-9050-fe4cc4ee2042",
+      "fromUserName": "sf",
+      "toUserId": "50569d20-ed83-4422-b2d8-94c28e46de97",
+      "toUserName": "asaf",
+      "amount": 1333.33,
+      "status": "paid",
+      "paidAt": "2026-10-09T18:05:38.525Z",
+      "createdAt": "2026-10-09T18:05:27.085Z"
+    },
+    "6330496d-d96e-46ef-8835-477c193ccb00": {
+      "id": "6330496d-d96e-46ef-8835-477c193ccb00",
+      "groupId": "103fe660-be1d-43ec-a8a6-69956e167e37",
+      "fromUserId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "fromUserName": "czxc",
+      "toUserId": "50569d20-ed83-4422-b2d8-94c28e46de97",
+      "toUserName": "asaf",
+      "amount": 333.33,
+      "status": "pending",
+      "paidAt": null,
+      "createdAt": "2026-10-09T18:05:27.085Z"
+    },
+    "cc751a73-2364-49ae-89cb-df5920ed6a53": {
+      "id": "cc751a73-2364-49ae-89cb-df5920ed6a53",
+      "groupId": "72628ee5-7043-452b-8bf6-48d1c7a04294",
+      "fromUserId": "d467ba5c-2531-4660-b993-cf53f7bc5d11",
+      "fromUserName": "vx",
+      "toUserId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "toUserName": "czxc",
+      "amount": 500,
+      "status": "pending",
+      "paidAt": null,
+      "createdAt": "2026-10-09T18:37:43.078Z"
+    },
+    "b6fd4a5a-d2e0-4ddc-9e56-f95ec7c06130": {
+      "id": "b6fd4a5a-d2e0-4ddc-9e56-f95ec7c06130",
+      "groupId": "8333cb11-cdce-4981-9590-3fac7562d33f",
+      "fromUserId": "3b247c33-3b7b-44ec-be5f-19270057856c",
+      "fromUserName": "ssd",
+      "toUserId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "toUserName": "czxc",
+      "amount": 1704,
+      "status": "paid",
+      "paidAt": "2026-10-09T19:22:00.096Z",
+      "createdAt": "2026-10-09T19:21:47.432Z"
+    },
+    "ce9c9adb-38bc-4718-be08-50f8eaf2b6cf": {
+      "id": "ce9c9adb-38bc-4718-be08-50f8eaf2b6cf",
+      "groupId": "8333cb11-cdce-4981-9590-3fac7562d33f",
+      "fromUserId": "3b247c33-3b7b-44ec-be5f-19270057856c",
+      "fromUserName": "ssd",
+      "toUserId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "toUserName": "czxc",
+      "amount": 2408,
+      "status": "pending",
+      "paidAt": null,
+      "createdAt": "2026-10-09T19:33:20.212Z"
+    },
+    "7e4d85ab-d52e-4f7b-b6fb-6215d9aa6f1d": {
+      "id": "7e4d85ab-d52e-4f7b-b6fb-6215d9aa6f1d",
+      "groupId": "8333cb11-cdce-4981-9590-3fac7562d33f",
+      "fromUserId": "3b247c33-3b7b-44ec-be5f-19270057856c",
+      "fromUserName": "ssd",
+      "toUserId": "61e85463-3259-4ca2-994f-84871a0552cf",
+      "toUserName": "dd",
+      "amount": 296,
+      "status": "pending",
+      "paidAt": null,
+      "createdAt": "2026-10-09T19:33:20.212Z"
+    },
+    "863979cd-c9ab-4540-bfc9-af0e00217f6e": {
+      "id": "863979cd-c9ab-4540-bfc9-af0e00217f6e",
+      "groupId": "4c42ab40-bca2-4aa2-9cf5-718d8081a5bd",
+      "fromUserId": "c28a2134-afbc-47d8-b8af-d7e2fbc03366",
+      "fromUserName": "Tester Sayali",
+      "toUserId": "00b39d30-671c-43a9-afee-e9392137bf22",
+      "toUserName": "Aman",
+      "amount": 375,
+      "status": "pending",
+      "paidAt": null,
+      "createdAt": "2026-10-09T19:36:10.550Z"
+    },
+    "79b9a073-7a08-4ba3-a723-ad6bcc932f3d": {
+      "id": "79b9a073-7a08-4ba3-a723-ad6bcc932f3d",
+      "groupId": "4c42ab40-bca2-4aa2-9cf5-718d8081a5bd",
+      "fromUserId": "b42c8c80-66d5-459e-b3bb-8a051f8f182c",
+      "fromUserName": "Rohan",
+      "toUserId": "00b39d30-671c-43a9-afee-e9392137bf22",
+      "toUserName": "Aman",
+      "amount": 375,
+      "status": "pending",
+      "paidAt": null,
+      "createdAt": "2026-10-09T19:36:10.550Z"
+    },
+    "5af223d6-0071-4c69-b184-b448f19b1bbc": {
+      "id": "5af223d6-0071-4c69-b184-b448f19b1bbc",
+      "groupId": "4c42ab40-bca2-4aa2-9cf5-718d8081a5bd",
+      "fromUserId": "e43c67f3-aa22-41b3-bd9b-f96d2104d13b",
+      "fromUserName": "Sneha",
+      "toUserId": "00b39d30-671c-43a9-afee-e9392137bf22",
+      "toUserName": "Aman",
+      "amount": 375,
+      "status": "pending",
+      "paidAt": null,
+      "createdAt": "2026-10-09T19:36:10.550Z"
+    },
+    "0f65c448-df14-4af2-abaa-b17cae87d0af": {
+      "id": "0f65c448-df14-4af2-abaa-b17cae87d0af",
+      "groupId": "45ccc365-9501-471b-ab04-d14e5502ba7c",
+      "fromUserId": "51bc2ba6-81e5-402e-a9b8-4422274a11cb",
+      "fromUserName": "s",
+      "toUserId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "toUserName": "czxc",
+      "amount": 500,
+      "status": "pending",
+      "paidAt": null,
+      "createdAt": "2026-10-10T13:20:12.068Z"
+    },
+    "bed10df5-fb9d-4e6d-9999-e0bc49bf3874": {
+      "id": "bed10df5-fb9d-4e6d-9999-e0bc49bf3874",
+      "groupId": "45ccc365-9501-471b-ab04-d14e5502ba7c",
+      "fromUserId": "9a09850b-1f13-492f-82f4-922ed43d213a",
+      "fromUserName": "w",
+      "toUserId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "toUserName": "czxc",
+      "amount": 500,
+      "status": "pending",
+      "paidAt": null,
+      "createdAt": "2026-10-10T13:20:12.068Z"
+    },
+    "ea48f3f3-cb1d-465e-92ce-8d00e2766624": {
+      "id": "ea48f3f3-cb1d-465e-92ce-8d00e2766624",
+      "groupId": "45ccc365-9501-471b-ab04-d14e5502ba7c",
+      "fromUserId": "51db9431-1c49-490b-bd2d-1550bf5e4b0a",
+      "fromUserName": "arin",
+      "toUserId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "toUserName": "czxc",
+      "amount": 500,
+      "status": "pending",
+      "paidAt": null,
+      "createdAt": "2026-10-10T13:20:12.068Z"
+    },
+    "245f1125-cf26-44f5-88c8-0aff5a99a888": {
+      "id": "245f1125-cf26-44f5-88c8-0aff5a99a888",
+      "groupId": "e0510b14-f61f-43cb-b432-c472a650b9f1",
+      "fromUserId": "564f369d-405a-4b1b-b31c-dceaa8ff0788",
+      "fromUserName": "anu",
+      "toUserId": "b2542e06-c4e8-4876-bbce-9e5fbd9c7751",
+      "toUserName": "arin",
+      "amount": 1333.33,
+      "status": "pending",
+      "paidAt": null,
+      "createdAt": "2026-10-10T19:21:17.820Z"
+    },
+    "9442e186-8ba4-46d9-99e5-d8d489d42afd": {
+      "id": "9442e186-8ba4-46d9-99e5-d8d489d42afd",
+      "groupId": "e0510b14-f61f-43cb-b432-c472a650b9f1",
+      "fromUserId": "aa78c7ea-7c96-4179-b117-cf92b4bdefa4",
+      "fromUserName": "sayali",
+      "toUserId": "b2542e06-c4e8-4876-bbce-9e5fbd9c7751",
+      "toUserName": "arin",
+      "amount": 333.33,
+      "status": "pending",
+      "paidAt": null,
+      "createdAt": "2026-10-10T19:21:17.820Z"
+    },
+    "6bdf39f4-9cb7-4453-a5a9-7e89693acb04": {
+      "id": "6bdf39f4-9cb7-4453-a5a9-7e89693acb04",
+      "groupId": "033e117f-0bd7-48d8-9873-6386ba22b3b5",
+      "fromUserId": "48eed8e7-64e0-410d-9e6d-d679ac1dbcdf",
+      "fromUserName": "sayali",
+      "toUserId": "35531715-16e8-464c-bb62-d08b3fb186e9",
+      "toUserName": "arin",
+      "amount": 1000,
+      "status": "paid",
+      "paidAt": "2026-10-10T19:34:08.849Z",
+      "createdAt": "2026-10-10T19:32:33.713Z"
+    },
+    "b4c94d0c-cd2f-4510-bce8-a41b0b6db665": {
+      "id": "b4c94d0c-cd2f-4510-bce8-a41b0b6db665",
+      "groupId": "033e117f-0bd7-48d8-9873-6386ba22b3b5",
+      "fromUserId": "3957dcf6-53b4-4895-a27e-d042726c7519",
+      "fromUserName": "czxc",
+      "toUserId": "35531715-16e8-464c-bb62-d08b3fb186e9",
+      "toUserName": "arin",
+      "amount": 666.67,
+      "status": "paid",
+      "paidAt": "2026-10-10T19:35:47.786Z",
+      "createdAt": "2026-10-10T19:34:56.680Z"
+    }
+  },
+  "paymentHistory": [
+    {
+      "id": "5e300b5d-3a20-481a-aa21-ccd88ac6e91d",
+      "groupId": "5706b51e-6fc0-48f8-9013-8f6940958cd7",
+      "settlementId": "fb995c67-5bcb-4ab5-aed4-7a2c3fadd727",
+      "fromUserName": "ss",
+      "toUserName": "czxc",
+      "amount": 1305.5,
+      "paidAt": "2026-10-09T08:13:28.265Z"
+    },
+    {
+      "id": "4a8e9b11-4ec1-425f-9c5a-7d862f5b8874",
+      "groupId": "103fe660-be1d-43ec-a8a6-69956e167e37",
+      "settlementId": "d45af33d-c288-4893-a236-bfb4d238e206",
+      "fromUserName": "sf",
+      "toUserName": "asaf",
+      "amount": 1333.33,
+      "paidAt": "2026-10-09T18:05:38.525Z"
+    },
+    {
+      "id": "933a16f4-d41b-4c3c-b0ff-eddba026c88d",
+      "groupId": "8333cb11-cdce-4981-9590-3fac7562d33f",
+      "settlementId": "b6fd4a5a-d2e0-4ddc-9e56-f95ec7c06130",
+      "fromUserName": "ssd",
+      "toUserName": "czxc",
+      "amount": 1704,
+      "paidAt": "2026-10-09T19:22:00.096Z"
+    },
+    {
+      "id": "d917cf4b-8305-49cb-a22e-22425f044a7d",
+      "groupId": "033e117f-0bd7-48d8-9873-6386ba22b3b5",
+      "settlementId": "6bdf39f4-9cb7-4453-a5a9-7e89693acb04",
+      "fromUserName": "sayali",
+      "toUserName": "arin",
+      "amount": 1000,
+      "paidAt": "2026-10-10T19:34:08.849Z"
+    },
+    {
+      "id": "1fde9b9d-53ca-42fd-8fe0-b8e61c200a39",
+      "groupId": "033e117f-0bd7-48d8-9873-6386ba22b3b5",
+      "settlementId": "b4c94d0c-cd2f-4510-bce8-a41b0b6db665",
+      "fromUserName": "czxc",
+      "toUserName": "arin",
+      "amount": 666.67,
+      "paidAt": "2026-10-10T19:35:47.786Z"
+    }
+  ]
 }
